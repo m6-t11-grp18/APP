@@ -1,9 +1,10 @@
-import { GlobalStyle } from './style/globalStyle';
+import React from 'react';
+import './style/styleGuide.css'
+import './style/resetCSS.css';
 
 function App() {
   return (
     <>
-      <GlobalStyle />
     </>
   );
 }
