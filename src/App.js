@@ -2,12 +2,13 @@ import React from 'react';
 import './style/styleGuide.css';
 import './style/resetCSS.css';
 import { StyleProvider } from './provider/styleProvider';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Router } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
       <StyleProvider>
+        <Router />
       </StyleProvider>
     </BrowserRouter>
   );
