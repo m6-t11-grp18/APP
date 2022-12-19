@@ -1,0 +1,16 @@
+{
+	"0": {
+		"userId": 0,
+		"saletype": "V",
+		"description": "Chevrolet onix 2023 com suspensão dianteira tipo McPherson e com barra estabilizadora, roda tipo independente e molas helicoidal, suspensão traseira tipo eixo de torção, roda tipo semi-independente e molas helicoidal. Dois freios à disco com dois discos ventilados.",
+		"year": 2023,
+		"milage": 0,
+		"price": 77730,
+		"cover": "",
+		"images": "https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png",
+		"createdAt": "2022-12-19T09:53:25.820Z",
+		"updatedAt": "2022-12-19T09:53:25.820Z",
+		"isActive": true,
+		"sold": false
+	}
+}
