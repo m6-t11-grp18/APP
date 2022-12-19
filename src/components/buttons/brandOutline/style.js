@@ -5,10 +5,8 @@ export const Wrapper = styled.button`
   color: ${({ theme }) => theme.brand[1]};
   border-radius: 3px;
   border: 1px solid ${({ theme }) => theme.brand[1]};
-  padding: 25%;
-  font-size: 20%;
-  width: 100%;
-  height: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   :hover {
@@ -19,5 +17,5 @@ export const Wrapper = styled.button`
     color: ${({ theme }) => theme.brand[4]};
   }
 
-  ${props => props.btnStyle}
+  ${(props) => props.btnStyle}
 `;
