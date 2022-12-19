@@ -17,7 +17,14 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	overflow-x: hidden;
+	overflow-x: visible;
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+	scrollbar-width: none; /* for Firefox */
+	box-sizing: content-box;
+	-webkit-overflow-y: visible;
+	-moz-overflow-y: visible;
+	-o-overflow-y: visible;
+	overflow-y: visible;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -26,6 +33,14 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	scrollbar-width: 0px;
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+	scrollbar-width: none; /* for Firefox */
+	box-sizing: content-box;
+	-webkit-overflow-y: visible;
+	-moz-overflow-y: visible;
+	-o-overflow-y: visible;
+	overflow-y: visible;
 }
 
 ol, ul {
@@ -42,4 +57,11 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-scroll-behavior: smooth;
+	-moz-scroll-behavior: smooth;
+	-ms-scroll-behavior: smooth;
 }

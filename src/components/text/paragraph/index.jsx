@@ -1,20 +1,20 @@
 import { TextStyled } from './style';
 
 export default function Text({
-  child,
-  txtStyl,
+  children,
+  txtStyle,
   fontSize,
   fontWeight,
   ...rest
 }) {
   return (
     <TextStyled
-      txtStyl={txtStyl}
+      txtStyle={txtStyle}
       fontSize={fontSize}
       fontWeight={fontWeight}
       {...rest}
     >
-      {child}
+      {children}
     </TextStyled>
   );
 }

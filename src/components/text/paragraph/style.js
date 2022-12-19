@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const TextStyled = styled.p`
-  color: ${({ theme }) => theme.white[1]};
+  color: ${({ theme }) => theme.white[0]};
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
 
-  font-size: ${(prop, { theme }) =>
-    theme.white[prop.fontSize]};
-  font-weight: ${(prop, { theme }) =>
-    theme.white[prop.fontWeight]};
-
-  ${txtStyl}
+  ${(props) => props.txtStyle}
 `;
