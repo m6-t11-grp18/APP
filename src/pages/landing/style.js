@@ -31,6 +31,7 @@ export const AnnouncementSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 10vh;
+  padding: 0 0 0 5vw;
 `;
 
 export const Announcements = styled.div`
