@@ -12,11 +12,18 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  h1{
+    font-size: 26px;
+    font-weight: 700;  
+    overflow-x: clip;
+  }
+  
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px; 
+  }
 
   ${props => props.footerStyle}
 `;

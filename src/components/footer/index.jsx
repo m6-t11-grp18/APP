@@ -1,12 +1,11 @@
-import { Wrapper } from './style';
+import { Wrapper} from './style';
 
 export default function Footer({
-  footerStyle,
   ...rest
 }) {
   return (
-    <Wrapper footerStyle={footerStyle} {...rest}>
-      <span>Motors shop</span> 
+    <Wrapper {...rest}>
+      <h1>Motors shop</h1>
       <span>@2022 - Todos os direitos reservados.</span>
       <span></span>
     </Wrapper>
