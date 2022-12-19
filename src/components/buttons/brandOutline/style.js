@@ -8,6 +8,8 @@ export const Wrapper = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
+  height: fit-content;
+  width: fit-content;
   cursor: pointer;
   :hover {
     background: ${({ theme }) => theme.brand[4]};
