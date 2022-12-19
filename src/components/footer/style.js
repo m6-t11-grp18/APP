@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   border: none;
   padding: 45px 9vw;
 
-  min-width: 81vw;
+  min-width: 99vw;
   max-width: 81vw;
   height: 100%;
 
@@ -14,19 +14,18 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`
 
-  h1{
+  h1 {
     font-size: 26px;
-    font-weight: 700;  
+    font-weight: 700;
     overflow-x: clip;
   }
-  
+
   span {
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px; 
+    line-height: 24px;
   }
 
-  ${props => props.footerStyle}
+  ${(props) => props.footerStyle}
 `;

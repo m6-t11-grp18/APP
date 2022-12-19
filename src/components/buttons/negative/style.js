@@ -11,6 +11,7 @@ export const Wrapper = styled.button`
   font-weight: 600;
   cursor: pointer;
   margin: 0;
+  padding: 1rem;
 
   :hover {
     background: ${({ theme }) => theme.grey[5]};
