@@ -131,16 +131,16 @@ body {
 }
 ::-webkit-scrollbar {
   position: absolute;
-  background-color: #36007D;
+  background-color: #36007d;
   width: 1vw;
 }
 ::-webkit-scrollbar-thumb {
-  border: .2vw solid #36007D;
-  background-color: #FFFFFF;
+  border: 0.2vw solid #36007d;
+  background-color: #ffffff;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-corner {
-  background-color: #36007D;
+  background-color: #36007d;
 }
 
 ol,
@@ -181,3 +181,17 @@ html {
   outline: 1px solid red;
   outline-offset: -1px;
 } */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
