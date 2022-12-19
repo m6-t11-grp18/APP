@@ -1,14 +1,25 @@
+import { Link } from 'react-scroll';
+import NegativeButton from '../buttons/negative';
 import { Wrapper } from './style';
 
-export default function Footer({
-  footerStyle,
-  ...rest
-}) {
+export default function Footer({ footerStyle, ...rest }) {
   return (
     <Wrapper footerStyle={footerStyle} {...rest}>
-      <span>Motors shop</span> 
+      <span>Motors shop</span>
       <span>@2022 - Todos os direitos reservados.</span>
-      <span></span>
+      <Link
+        to="top"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={100}
+      >
+        <NegativeButton
+          style={{ transform: 'rotate(90deg)' }}
+        >
+          &#10094;
+        </NegativeButton>
+      </Link>
     </Wrapper>
   );
 }
