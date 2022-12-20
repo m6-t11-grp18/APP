@@ -1,5 +1,7 @@
 import BrandOutlineButton from '../../components/buttons/brandOutline';
 import Text from '../../components/text/paragraph';
+import Footer from '../../components/footer'
+
 import {
   Announcements,
   AnnouncementSection,

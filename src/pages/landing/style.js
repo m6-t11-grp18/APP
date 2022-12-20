@@ -25,6 +25,10 @@ export const HeaderBtnsWrapper = styled.div`
   width: 25rem;
   height: 2rem;
   box-sizing: content-box;
+  @media (max-width: 1024px) {
+    width: 30vh;
+    margin: 15px;
+  }
 `;
 
 export const AnnouncementSection = styled.section`
