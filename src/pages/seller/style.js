@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
-  width: 99vw;
+  width: 100vw;
 `;
 
 export const SellerWrapper = styled.div`

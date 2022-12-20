@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.white[0]};
   border: none;
   padding: 45px 9vw;
-  min-width: 99vw;
+  min-width: 100vw;
   max-width: 81vw;
   height: 100%;
 

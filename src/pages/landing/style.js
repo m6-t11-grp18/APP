@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
-  width: 99vw;
+  width: 100vw;
 `;
 
 export const Header = styled.div`
-  width: 99vw;
+  width: 100vw;
   height: 60vh;
   background-color: ${({ theme }) => theme.brand[2]};
   display: flex;
@@ -13,10 +13,9 @@ export const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   align-content: center;
-  padding: 15vh 0;
+  padding: 10vh 0;
   max-width: 100vw;
   box-sizing: border-box;
-  overflow-y: hidden;
 `;
 
 export const HeaderBtnsWrapper = styled.div`
@@ -25,10 +24,15 @@ export const HeaderBtnsWrapper = styled.div`
   width: 25rem;
   height: 2rem;
   box-sizing: content-box;
-  @media (max-width: 1024px) {
-    width: 30vh;
+  @media (max-width: 425px) {
+    width: 225px;
     margin: 15px;
   }
+
+  @media (max-width: 320px) {
+    width: 200px
+  }
+
 `;
 
 export const AnnouncementSection = styled.section`
