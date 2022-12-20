@@ -19,5 +19,9 @@ export const Wrapper = styled.button`
     color: ${({ theme }) => theme.brand[4]};
   }
 
+  @media (max-width: 320px) {
+    width: 20px;
+  }
+
   ${(props) => props.btnStyle}
 `;

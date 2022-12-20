@@ -10,7 +10,6 @@ import {
   MainWrapper,
 } from './style';
 import { themes } from '../../style/theme';
-import Footer from '../../components/footer';
 import { Link } from 'react-scroll';
 
 export default function LandingPage() {
@@ -49,7 +48,7 @@ export default function LandingPage() {
               style={{
                 border: `1px solid ${themes.light.white[0]}`,
                 color: `${themes.light.white[0]}`,
-                padding: '1vh 4rem',
+                width: "6rem",
               }}
             >
               Carros
@@ -67,7 +66,7 @@ export default function LandingPage() {
               style={{
                 border: `1px solid ${themes.light.white[0]}`,
                 color: `${themes.light.white[0]}`,
-                padding: '1vh 4rem',
+                width: "6rem",
               }}
             >
               Motos
