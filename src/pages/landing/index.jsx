@@ -1,5 +1,7 @@
 import BrandOutlineButton from '../../components/buttons/brandOutline';
 import Text from '../../components/text/paragraph';
+import Footer from '../../components/footer'
+
 import {
   Announcements,
   AnnouncementSection,
@@ -78,6 +80,7 @@ export default function LandingPage() {
         </Text>
         <Announcements></Announcements>
       </AnnouncementSection>
+      <Footer/>
     </MainWrapper>
   );
 }

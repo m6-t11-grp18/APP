@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.white[0]};
   border: none;
   padding: 45px 59px;
-  width: 95%;
+  
   height: 100%;
 
   display: flex;
@@ -24,6 +24,21 @@ export const Wrapper = styled.div`
     font-size: 16px;
     line-height: 24px; 
   }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+
+    span {
+      font-size: 15px; 
+    }
+  }
+
+  @media (max-width: 320px) {
+    span {
+      font-size: 13px; 
+    }
+  }
+
 
   ${props => props.footerStyle}
 `;
