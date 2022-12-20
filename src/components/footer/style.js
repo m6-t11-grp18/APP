@@ -4,8 +4,9 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.white[1]};
   color: ${({ theme }) => theme.white[0]};
   border: none;
-  padding: 45px 59px;
-  
+  padding: 45px 9vw;
+  min-width: 99vw;
+  max-width: 81vw;
   height: 100%;
 
   display: flex;
@@ -13,16 +14,16 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  h1{
+  h1 {
     font-size: 26px;
-    font-weight: 700;  
+    font-weight: 700;
     overflow-x: clip;
   }
-  
+
   span {
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px; 
+    line-height: 24px;
   }
 
   @media (max-width: 1024px) {
@@ -40,5 +41,5 @@ export const Wrapper = styled.div`
   }
 
 
-  ${props => props.footerStyle}
+  ${(props) => props.footerStyle}
 `;
