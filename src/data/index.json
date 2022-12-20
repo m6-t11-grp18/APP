@@ -7,7 +7,13 @@
 		"milage": 0,
 		"price": 77730,
 		"cover": "",
-		"images": "https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png",
+		"images": [
+			"https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png",
+			"https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png",
+			"https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png",
+			"https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png",
+			"https://img1.icarros.com/dbimg/imgmodelo/1/2428_8.png"
+		],
 		"createdAt": "2022-12-19T09:53:25.820Z",
 		"updatedAt": "2022-12-19T09:53:25.820Z",
 		"isActive": true,
