@@ -10,7 +10,6 @@ import {
   MainWrapper,
 } from './style';
 import { themes } from '../../style/theme';
-import Footer from '../../components/footer';
 import { Link } from 'react-scroll';
 
 export default function LandingPage() {
