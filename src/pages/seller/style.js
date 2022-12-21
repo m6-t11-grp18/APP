@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
   width: 99vw;
+  margin-top:70px;
 `;
 
 export const SellerWrapper = styled.div`

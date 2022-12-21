@@ -1,4 +1,5 @@
 import Footer from '../../components/footer';
+import Headerr from '../../components/header';
 import Text from '../../components/text/paragraph';
 import { themes } from '../../style/theme';
 import {
@@ -21,6 +22,7 @@ export default function Seller() {
         backgroundImage: `linear-gradient(${themes.light.brand[1]} 0, ${themes.light.brand[1]} 25vh,${themes.light.grey[8]} 25vh)`,
       }}
     >
+      <Headerr/>
       <SellerWrapper>
         <SellerAvatar>SL</SellerAvatar>
         <SellerInfosWrapper>
