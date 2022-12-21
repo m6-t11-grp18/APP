@@ -12,6 +12,7 @@ import {
 import { themes } from '../../style/theme';
 import { Link } from 'react-scroll';
 import Headerr from '../../components/header';
+import ProductCard from '../../components/ProductCard';
 
 export default function LandingPage() {
   return (
@@ -90,7 +91,9 @@ export default function LandingPage() {
         >
           Carros
         </Text>
-        <Announcements></Announcements>
+        <Announcements>
+          <ProductCard/>
+        </Announcements>
       </AnnouncementSection>
 
       <AnnouncementSection id="motos">
