@@ -50,7 +50,7 @@ export default function LandingPage() {
               style={{
                 border: `1px solid ${themes.light.white[0]}`,
                 color: `${themes.light.white[0]}`,
-                padding: '1vh 4rem',
+                width: "6rem",
               }}
             >
               Carros
@@ -68,7 +68,7 @@ export default function LandingPage() {
               style={{
                 border: `1px solid ${themes.light.white[0]}`,
                 color: `${themes.light.white[0]}`,
-                padding: '1vh 4rem',
+                width: "6rem",
               }}
             >
               Motos
