@@ -5,10 +5,9 @@ export const StyleContext = createContext();
 export const StyleProvider = ({ children }) => {
   const [userModal, setUserModal] = useState(false);
   const [editUserModal, setEditUserModal] = useState(false);
-  const [announcementModal, setAnnouncementModal] =
+  const [createAddModal, setCreateAddModal] =
     useState(false);
-  const [editAnnouncementModal, setEditAnnouncementModal] =
-    useState(false);
+  const [editAddModal, setEditAddModal] = useState(false);
   const [productImageModal, setProductImageModal] =
     useState(false);
 
@@ -19,10 +18,10 @@ export const StyleProvider = ({ children }) => {
         setUserModal,
         editUserModal,
         setEditUserModal,
-        announcementModal,
-        setAnnouncementModal,
-        editAnnouncementModal,
-        setEditAnnouncementModal,
+        createAddModal,
+        setCreateAddModal,
+        editAddModal,
+        setEditAddModal,
         productImageModal,
         setProductImageModal,
       }}

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
 `;
 
 export const Header = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   background-color: ${({ theme }) => theme.brand[2]};
   display: flex;
@@ -14,7 +14,7 @@ export const Header = styled.div`
   justify-content: space-between;
   align-content: center;
   padding: 10vh 0;
-  max-width: 100vw;
+  width: 100%;
   box-sizing: border-box;
 `;
 
@@ -30,9 +30,8 @@ export const HeaderBtnsWrapper = styled.div`
   }
 
   @media (max-width: 320px) {
-    width: 200px
+    width: 200px;
   }
-
 `;
 
 export const AnnouncementSection = styled.section`

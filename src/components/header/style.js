@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { themes } from '../../style/theme';
 
 export const StyledHeader = styled.div`
-  position:fixed;
-  top:0;
-  left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 70px;
   width: 100%;
   display: flex;
@@ -44,8 +44,8 @@ export const Options3 = styled.div`
   height: 100%;
   align-items: center;
   border-left: 2px solid rgb(240, 240, 240);
-  padding-left:30px;
-  margin-right:15px;
+  padding-left: 30px;
+  margin-right: 15px;
 `;
 
 export const LogoContainer = styled.div`

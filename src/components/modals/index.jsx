@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { ModalWrapper, BlurWrapper } from './style';
 
 export default function Modal({
@@ -12,10 +11,20 @@ export default function Modal({
     <>
       {variable && (
         <BlurWrapper
-          onClick={() => set(false)}
+          onClick={(event) => {
+            set(false);
+            event.stopPropagation();
+            event.isPropagationStopped();
+          }}
           blurWrapperStyle={blurWrapperStyle}
         >
-          <ModalWrapper modalStyle={modalStyle}>
+          <ModalWrapper
+            modalStyle={modalStyle}
+            onClick={(event) => {
+              event.stopPropagation();
+              event.isPropagationStopped();
+            }}
+          >
             {children}
           </ModalWrapper>
         </BlurWrapper>

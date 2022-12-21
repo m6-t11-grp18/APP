@@ -13,19 +13,27 @@ export const BlurWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: #00000020;
-  backdrop-filter: blur(20px);
+  background-color: #00000060;
+  backdrop-filter: blur(2px);
 
-  z-index: 6000;
+  z-index: 10;
   ${(props) => props.blurWrapperStyle}
 `;
 
 export const ModalWrapper = styled.div`
-  ${(props) => props.modalStyle}
-
+  z-index: 15;
   box-sizing: content-box;
-  -webkit-overflow-y: hidden;
-  -moz-overflow-y: hidden;
-  -o-overflow-y: hidden;
-  overflow-y: hidden;
+  -webkit-overflow-y: scroll;
+  -moz-overflow-y: scroll;
+  -o-overflow-y: scroll;
+  overflow-y: scroll;
+  fon
+  /* width: 40%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  background-color: white;
+  color: black; */
+
+  ${(props) => props.modalStyle}
 `;
