@@ -7,10 +7,10 @@ import NegativeButton from '../../buttons/negative';
 import Input from '../../form/input';
 import Label from '../../form/label';
 import { FormWrapper } from '../../form/style';
-import Anchor from '../../text/anchor';
 import Text from '../../text/paragraph';
 import { InputsWrapper, TitleWrapper } from './style';
 import { MdExposurePlus1 } from 'react-icons/md';
+import BrandButton from '../../buttons/brand';
 
 export default function CreateAddModal() {
   const { createAddModal, setCreateAddModal } =
@@ -42,39 +42,14 @@ export default function CreateAddModal() {
     },
   });
 
-  const [galleryItens, setGalleryItens] = useState(1);
+  const [galleryItens, setGalleryItens] = useState([1]);
 
-  function createElement(prop) {
-    return (
-      <>
-        {' '}
-        <Label
-          htmlFor="gallery"
-          style={{
-            width: '60%',
-            margin: '4% 20% 2% 20%',
-            padding: '5px 10px',
-            // width: '200px',
-            backgroundColor: themes.light.brand[1],
-            color: '#FFF',
-            textAlign: 'center',
-            display: 'block',
-            marginTop: '10px',
-            cursor: 'pointer',
-            borderRadius: '4px',
-          }}
-        >
-          `${prop}`ª Imagem da galeria
-        </Label>
-        <Input
-          type="file"
-          style={{ display: 'none' }}
-          name="gallery"
-          id="gallery"
-          multiple
-        />
-      </>
-    );
+  function addImage() {
+    galleryItens.length < 6 &&
+      setGalleryItens([
+        ...galleryItens,
+        galleryItens.length + 1,
+      ]);
   }
 
   return (
@@ -363,57 +338,96 @@ export default function CreateAddModal() {
           >
             Imagens da galeria
           </Label>
-          <button
-            style={{
-              borderRadius: '50%',
-              width: '2rem',
-              height: '2rem',
-              border: `1px solid ${themes.light.brand[1]}`,
-              fontWeight: themes.light.fontWeight[1000],
-              color: themes.light.white[0],
-              backgroundColor: themes.light.brand[1],
-            }}
-          >
-            <MdExposurePlus1
-              stroke-width="0"
+          {galleryItens.length < 6 && (
+            <button
               style={{
-                height: '80%',
-                width: '80%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignContent: 'center',
-                alignItems: 'center',
-                border: 'none',
-
+                borderRadius: '50%',
+                width: '2rem',
+                height: '2rem',
+                border: `1px solid ${themes.light.brand[1]}`,
+                fontWeight: themes.light.fontWeight[1000],
+                color: themes.light.white[0],
+                backgroundColor: themes.light.brand[1],
               }}
-            />
-          </button>
+            >
+              <MdExposurePlus1
+                onClick={(event) => {
+                  event.preventDefault();
+                  addImage();
+                }}
+                strokeWidth="0"
+                style={{
+                  height: '80%',
+                  width: '80%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                  border: 'none',
+                }}
+              />
+            </button>
+          )}
         </InputsWrapper>
-        <Label
-          htmlFor="gallery"
+
+        {galleryItens.map((element) => {
+          return (
+            <div key={element}>
+              <Label
+                htmlFor="gallery"
+                style={{
+                  width: '60%',
+                  margin: '4% 20% 2% 20%',
+                  padding: '5px 10px',
+                  // width: '200px',
+                  backgroundColor: themes.light.brand[1],
+                  color: '#FFF',
+                  textAlign: 'center',
+                  display: 'block',
+                  marginTop: '10px',
+                  cursor: 'pointer',
+                  borderRadius: '4px',
+                }}
+              >
+                {element}ª Imagem da galeria
+              </Label>
+              <Input
+                type="file"
+                style={{ display: 'none' }}
+                name="gallery"
+                id="gallery"
+                multiple
+              />
+            </div>
+          );
+        })}
+        <InputsWrapper
           style={{
-            width: '60%',
-            margin: '4% 20% 2% 20%',
-            padding: '5px 10px',
-            // width: '200px',
-            backgroundColor: themes.light.brand[1],
-            color: '#FFF',
-            textAlign: 'center',
-            display: 'block',
-            marginTop: '10px',
-            cursor: 'pointer',
-            borderRadius: '4px',
+            display: 'flex',
+            height: '2rem',
+            justifyContent: 'flex-end',
+            margin: '4% 0 0 0',
           }}
         >
-          1ª Imagem da galeria
-        </Label>
-        <Input
-          type="file"
-          style={{ display: 'none' }}
-          name="gallery"
-          id="gallery"
-          multiple
-        />
+          <NegativeButton
+            onClick={() => setCreateAddModal(false)}
+            style={{
+              width: '30%',
+              height: '100%',
+              margin: '0 4% 0 0  ',
+              padding: 0,
+            }}
+          >
+            Cancelar
+          </NegativeButton>
+          <BrandButton
+            type="submit"
+            style={{ width: '30%' }}
+            disabled
+          >
+            Criar Anúncio
+          </BrandButton>
+        </InputsWrapper>
       </FormWrapper>
     </Modal>
   );
