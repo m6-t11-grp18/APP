@@ -5,8 +5,8 @@ export const Wrapper = styled.button`
   color: ${({ theme }) => theme.white[0]};
   border-radius: 3px;
   border: none;
-  padding: 25%;
-  font-size: 20%;
+  font-size: 1rem;
+  width: fit-content;
   width: 100%;
   height: 100%;
   font-weight: 600;
@@ -19,5 +19,5 @@ export const Wrapper = styled.button`
     color: ${({ theme }) => theme.brand[4]};
   }
 
-  ${props => props.btnStyle}
+  ${(props) => props.btnStyle}
 `;
