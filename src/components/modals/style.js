@@ -27,7 +27,7 @@ export const ModalWrapper = styled.div`
   -moz-overflow-y: scroll;
   -o-overflow-y: scroll;
   overflow-y: scroll;
-  fon
+
   /* width: 40%;
   display: flex;
   flex-direction: column;
