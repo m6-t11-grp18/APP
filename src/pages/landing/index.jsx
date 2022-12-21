@@ -11,10 +11,12 @@ import {
 } from './style';
 import { themes } from '../../style/theme';
 import { Link } from 'react-scroll';
+import Headerr from '../../components/header';
 
 export default function LandingPage() {
   return (
     <MainWrapper id="top">
+      <Headerr/>
       <Header>
         <Text
           style={{
