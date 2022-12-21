@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import LandingPage from '../pages/landing';
 import Seller from '../pages/seller';
-import HomePage from '../pages/user';
+import HomePage from '../pages/home';
 /* 
 seller => inserir :id depois
 */

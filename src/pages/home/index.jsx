@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import BrandOutlineButton from '../../components/buttons/brandOutline';
 import Footer from '../../components/footer';
+import Headerr from '../../components/header';
+import CreateAddModal from '../../components/modals/createAdd';
 import Text from '../../components/text/paragraph';
+import { StyleContext } from '../../provider/styleProvider';
 import { themes } from '../../style/theme';
 import {
   Announcements,
@@ -14,13 +18,18 @@ import {
 } from '../seller/style';
 
 export default function HomePage() {
+  const { createAddModal, setCreateAddModal } =
+    useContext(StyleContext);
   return (
     <>
+      {createAddModal && <CreateAddModal></CreateAddModal>}
+      <Headerr />
       <MainWrapper
         id="top"
         style={{
           padding: '10vh 0 0 0',
           backgroundImage: `linear-gradient(${themes.light.brand[1]} 0, ${themes.light.brand[1]} 25vh,${themes.light.grey[8]} 25vh)`,
+          margin: '70px 0 0 0',
         }}
       >
         <SellerWrapper>
@@ -35,7 +44,7 @@ export default function HomePage() {
             >
               Samuel Leão
             </Text>
-            <Text
+            {/* <Text
               style={{
                 fontSize: `${themes.light.fontSize['75']}`,
                 fontWeight: `${themes.light.fontWeight[5]}`,
@@ -50,7 +59,7 @@ export default function HomePage() {
               }}
             >
               Anunciante
-            </Text>
+            </Text> */}
           </SellerInfosWrapper>
           <Text
             style={{
@@ -67,7 +76,9 @@ export default function HomePage() {
             leo, vitae iaculis nisl.Per aumento de cachacis,
             eu reclamis.
           </Text>
-          <BrandOutlineButton>
+          <BrandOutlineButton
+            onClick={() => setCreateAddModal(true)}
+          >
             Criar anuncio
           </BrandOutlineButton>
         </SellerWrapper>
