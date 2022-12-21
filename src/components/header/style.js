@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { themes } from '../../style/theme';
 
 export const StyledHeader = styled.div`
   position:fixed;
