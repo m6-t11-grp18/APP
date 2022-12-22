@@ -13,11 +13,10 @@ export const MainWrapper = styled.div`
 `;
 
 export const Header = styled.section`
-  position: relative;
   width: calc(100vw + 2px);
   height: 50vh;
-  margin-top: 70px;
-  background-color: ${({ theme }) => theme.brand[2]};
+  /* margin-top: 70px; */
+  /* background-color: ${({ theme }) => theme.brand[2]}; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,8 +27,8 @@ export const Header = styled.section`
 `;
 
 export const Photo = styled.div`
-  position: absolute;
-  top: 5vw;
+  /* position: absolute;
+  top: 5vw; */
   width: 95vw;
   height: 95vw;
   max-height: 40vh;
@@ -44,8 +43,8 @@ export const Photo = styled.div`
 `;
 
 export const BasicDetailsHeadline = styled.div`
-  position: absolute;
-  height: 20px;
+  /* position: absolute;
+  height: 20px; */
   width: 95vw;
   top: calc(100% - 19px);
   border-radius: 7px 7px 0 0;
@@ -65,12 +64,12 @@ export const BasicDetails = styled.section`
 `;
 
 export const Title = styled.h1`
-font-family: 'Lexend';
-font-style: normal;
-font-weight: 600;
-font-size: 1.75rem;
-line-height: 35px;
-color ${({ theme }) => theme.grey[1]};
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 35px;
+  color: ${({ theme }) => theme.grey[1]};
 `;
 
 export const Tag = styled.span`
