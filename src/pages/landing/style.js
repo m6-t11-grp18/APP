@@ -42,5 +42,9 @@ export const AnnouncementSection = styled.section`
 `;
 
 export const Announcements = styled.div`
-  height: 70vh;
+  height: fit-content;
+  display: flex;
+  gap: 30px;
+  padding: 0 3rem 2rem 0;
+  overflow-x: scroll;
 `;
