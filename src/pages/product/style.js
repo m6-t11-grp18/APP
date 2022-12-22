@@ -305,10 +305,10 @@ export const CommentProfile = styled.div`
 export const MakeCommentSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 65px;
+  padding: 25px;
   height: fit-content;
   gap: 15px;
-  width: calc(95vw - 130px);
+  width: calc(95vw - 50px);
   background-color: ${({ theme }) => theme.grey[10]};
 `;
 
