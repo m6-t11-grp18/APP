@@ -10,6 +10,7 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.white[0]};
+  box-shadow: 0 0 10px 5px #00000060;
 `;
 
 export const StyledRightButtonsWrapper = styled.div`
@@ -34,6 +35,7 @@ export const Options2 = styled.div`
   align-items: center;
   border-left: 2px solid rgb(240, 240, 240);
   padding-left: 20px;
+
 `;
 
 export const Options3 = styled.div`

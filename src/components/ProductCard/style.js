@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   background-color: #e9ecef;
+  border-radius: 4px;
 `;
 
 export const Title = styled.div`
@@ -17,11 +18,18 @@ export const Title = styled.div`
   margin-bottom: 25px;
   font-size: 1rem;
 `;
-
 export const Description = styled.div`
   font-size: 0.9rem;
   color: #495057;
   margin-bottom: 20px;
+
+  overflow: hidden;
+  max-width: 80ch;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 export const Container2 = styled.div`
@@ -82,4 +90,10 @@ export const BotaoVerComo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+export const SellerDetails = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
 `;

@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { SellerAvatar } from '../../pages/seller/style';
+import Text from '../text/paragraph';
 import {
   Container,
   Description,
@@ -10,32 +13,55 @@ import {
   Container5,
   BotaoEditar,
   BotaoVerComo,
+  SellerDetails,
 } from './style';
 
-import carro from '../../assets/carro.png';
+export default function ProductCard({ product, ...rest }) {
+  const [endPoint, setEndPoint] = useState('/');
 
-export default function ProductCard({ ...rest }) {
+  useEffect(() => {
+    setEndPoint(window.location.pathname);
+  }, []);
   return (
     <Container>
-      <Image src={carro} alt="carro" />
-      <Title>Product title stays here - max 1 line</Title>
-      <Description>
-        Lorem Ipsum is simply dummy text of the printing and
-        typesetting industry. Lorem...
-      </Description>
+      <Image src={product?.cover} alt="carro" />
+      <Title>{product?.title}</Title>
+      <Description>{product?.descripition}</Description>
+
+      {/* Retirar quando página home */}
+      {endPoint === '/' && (
+        <SellerDetails>
+          <SellerAvatar
+            style={{
+              height: '2rem',
+              width: '2rem',
+              fontSize: '1.5rem',
+            }}
+          >
+            {product?.user?.name[0]}
+          </SellerAvatar>
+          <Text style={{ color: '#000000' }}>
+            {' '}
+            {product?.user?.name}
+          </Text>
+        </SellerDetails>
+      )}
+
       <Container2>
         <Container3>
-          <Container4>0 KM</Container4>
-          <Container4>2019</Container4>
+          <Container4>{product?.milage} KM</Container4>
+          <Container4>{product?.year}</Container4>
         </Container3>
 
-        <Price>R$ 00.000,00</Price>
+        <Price>R$ {product?.price}</Price>
       </Container2>
 
-      <Container5>
-        <BotaoEditar>Editar</BotaoEditar>
-        <BotaoVerComo>Ver como</BotaoVerComo>
-      </Container5>
+      {endPoint === '/home' && (
+        <Container5>
+          <BotaoEditar>Editar</BotaoEditar>
+          <BotaoVerComo>Ver como</BotaoVerComo>
+        </Container5>
+      )}
     </Container>
   );
 }
