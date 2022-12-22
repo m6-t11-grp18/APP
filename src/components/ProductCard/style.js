@@ -18,11 +18,11 @@ export const Title = styled.div`
   margin-bottom: 25px;
   font-size: 1rem;
 `;
-
-export const Description = styled.p`
+export const Description = styled.div`
   font-size: 0.9rem;
   color: #495057;
   margin-bottom: 20px;
+
   overflow: hidden;
   max-width: 80ch;
   text-overflow: ellipsis;
@@ -91,7 +91,6 @@ export const BotaoVerComo = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
 export const SellerDetails = styled.div`
   display: flex;
   align-items: center;
