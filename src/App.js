@@ -6,15 +6,18 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { themes } from './style/theme';
 import Router from './routes';
+import { MotorShopProvider } from './provider/motorShopProvider';
 
 function App() {
   return (
     <BrowserRouter>
-      <StyleProvider>
-        <ThemeProvider theme={themes['light']}>
-          <Router />
-        </ThemeProvider>
-      </StyleProvider>
+      <MotorShopProvider>
+        <StyleProvider>
+          <ThemeProvider theme={themes['light']}>
+            <Router />
+          </ThemeProvider>
+        </StyleProvider>
+      </MotorShopProvider>
     </BrowserRouter>
   );
 }
