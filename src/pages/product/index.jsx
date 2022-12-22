@@ -25,11 +25,12 @@ import {
   CommentInput,
   QuickComments,
 } from './style';
-import { themes } from '../../style/theme';
+// import { themes } from '../../style/theme';
 import { Ads, User } from '../../data';
 import { useParams } from 'react-router-dom';
-import Anchor from '../../components/text/anchor';
+// import Anchor from '../../components/text/anchor';
 import Footer from '../../components/footer';
+import { v4 as uuid } from 'uuid';
 
 function ProductMobile() {
   const { id } = useParams();
@@ -48,7 +49,10 @@ function ProductMobile() {
       <Headerr />
       <Header>
         <Photo>
-          <img src={Ads[id].cover} alt="Car photo" />
+          <img
+            src={Ads[id]?.cover}
+            alt="product principal"
+          />
         </Photo>
         <BasicDetailsHeadline />
       </Header>
@@ -71,8 +75,11 @@ function ProductMobile() {
         <ul>
           {Ads[id].images.map((image) => {
             return (
-              <li>
-                <img src={image}></img>
+              <li key={uuid()}>
+                <img
+                  src={image}
+                  alt="product details"
+                ></img>
               </li>
             );
           })}
