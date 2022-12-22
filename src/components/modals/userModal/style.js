@@ -15,4 +15,5 @@ export const NavWrapper = styled.nav`
   flex-direction: column;
   padding: 0.5rem 1rem;
   gap: 0.5rem;
+  z-index: 15;
 `;
