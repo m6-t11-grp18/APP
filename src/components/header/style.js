@@ -34,6 +34,7 @@ export const Options2 = styled.div`
   align-items: center;
   border-left: 2px solid rgb(240, 240, 240);
   padding-left: 20px;
+
 `;
 
 export const Options3 = styled.div`
