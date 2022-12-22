@@ -3,7 +3,9 @@ import BrandOutlineButton from '../../components/buttons/brandOutline';
 import Footer from '../../components/footer';
 import Headerr from '../../components/header';
 import CreateAddModal from '../../components/modals/createAdd';
+import ProductCard from '../../components/ProductCard';
 import Text from '../../components/text/paragraph';
+import { MotorShopContext } from '../../provider/motorShopProvider';
 import { StyleContext } from '../../provider/styleProvider';
 import { themes } from '../../style/theme';
 import {
@@ -18,11 +20,13 @@ import {
 } from '../seller/style';
 
 export default function HomePage() {
+  const { products } = useContext(MotorShopContext);
+
   const { createAddModal, setCreateAddModal } =
     useContext(StyleContext);
   return (
     <>
-      {createAddModal && <CreateAddModal></CreateAddModal>}
+      {createAddModal && <CreateAddModal />}
       <Headerr />
       <MainWrapper
         id="top"
@@ -76,7 +80,7 @@ export default function HomePage() {
             leo, vitae iaculis nisl.Per aumento de cachacis,
             eu reclamis.
           </Text>
-          
+
           <BrandOutlineButton
             onClick={() => setCreateAddModal(true)}
           >
@@ -97,7 +101,19 @@ export default function HomePage() {
           >
             Carros
           </Text>
-          <Announcements></Announcements>
+          <Announcements>
+            {products.length > 0 &&
+              products.map((element, index) => {
+                return (
+                  element.type === 'car' && (
+                    <ProductCard
+                      key={index}
+                      product={element}
+                    />
+                  )
+                );
+              })}
+          </Announcements>
         </AnnouncementSection>
 
         <AnnouncementSection id="motos">
@@ -113,7 +129,19 @@ export default function HomePage() {
           >
             Motos
           </Text>
-          <Announcements></Announcements>
+          <Announcements>
+            {products.length > 0 &&
+              products.map((element, index) => {
+                return (
+                  element.type === 'motorcycle' && (
+                    <ProductCard
+                      key={index}
+                      product={element}
+                    />
+                  )
+                );
+              })}
+          </Announcements>
         </AnnouncementSection>
 
         <Footer />
