@@ -4,6 +4,7 @@ import LandingPage from '../pages/landing';
 import Seller from '../pages/seller';
 import HomePage from '../pages/home';
 import ProductMobile from '../pages/product';
+import Login from '../pages/login';
 /* 
 seller => inserir :id depois
 */
@@ -16,8 +17,9 @@ function Router() {
         path="/product/:id"
         element={ <ProductItem />}
       />
-      <Route path="/login" element={ <Login />} />
+      
       <Route path="/register" element={ <Register />} />*/}
+      <Route path="/login" element={<Login />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/product/mobile/:id" element={<ProductMobile />} />
     </Routes>
