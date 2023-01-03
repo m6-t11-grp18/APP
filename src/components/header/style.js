@@ -18,6 +18,11 @@ export const StyledRightButtonsWrapper = styled.div`
   margin-right: 30px;
   height: 100%;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+
+}
+
 `;
 
 export const Options = styled.div`
@@ -25,6 +30,7 @@ export const Options = styled.div`
   justify-content: space-around;
   width: 250px;
   margin-right: 20px;
+
 `;
 
 export const Options2 = styled.div`
@@ -120,8 +126,28 @@ export const SamuelLeaoFoto = styled.div`
   border-radius: 100%;
   cursor: pointer;
 `;
+
 export const SamuelLeaoNome = styled.div`
   color: #495057;
 
   cursor: pointer;
 `;
+
+export const NavButton = styled.div`
+margin-right:25px;
+display:flex;
+flex-direction:column;
+background-color:white;
+padding-top:3px;
+justify-content:center;
+align-items:center;
+cursor: pointer;
+`
+
+export const TracoDoBotaoNav = styled.div`
+background-color:black;
+width:15px;
+height:2px;
+margin-bottom:3px;
+border-radius:1px;
+`
