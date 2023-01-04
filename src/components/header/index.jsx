@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { StyleContext } from '../../provider/styleProvider';
@@ -11,6 +11,7 @@ import {
   LogoContainer,
   Motors,
   MotosButton,
+  NavButton,
   Options,
   Options2,
   Options3,
@@ -19,67 +20,100 @@ import {
   Shop,
   StyledHeader,
   StyledRightButtonsWrapper,
+  TracoDoBotaoNav,
 } from './style';
 
 export default function Headerr({ ...rest }) {
   const navigate = useNavigate();
 
+  const [wasClicked, setWasClicked] = useState(false);
+
   const { userModal, setUserModal } =
     useContext(StyleContext);
 
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+    };
+
+    window.addEventListener(
+      'resize',
+      updateWindowDimensions
+    );
+
+    return () =>
+      window.removeEventListener(
+        'resize',
+        updateWindowDimensions
+      );
+  }, []);
+
   return (
-    <StyledHeader>
-      <LogoContainer onClick={() => navigate('/')}>
-        <Motors>Motors</Motors>
-        <Shop>shop</Shop>
-      </LogoContainer>
+    <>
+      <StyledHeader>
+        <LogoContainer onClick={() => navigate('/')}>
+          <Motors>Motors</Motors>
+          <Shop>shop</Shop>
+        </LogoContainer>
 
-      <StyledRightButtonsWrapper>
-        <Options>
-          <Link
-            to="carros"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={100}
-          >
-            <CarrosButton>Carros</CarrosButton>
-          </Link>
-          <Link
-            to="motos"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={100}
-          >
-            <MotosButton>Motos</MotosButton>
-          </Link>
-          <Link
-            to="leilao"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={100}
-          >
-            <LeilaoButton>Leilão</LeilaoButton>
-          </Link>
-        </Options>
+        {width > 768 ? (
+          <StyledRightButtonsWrapper>
+            <Options>
+              <Link
+                to="carros"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <CarrosButton>Carros</CarrosButton>
+              </Link>
+              <Link
+                to="motos"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <MotosButton>Motos</MotosButton>
+              </Link>
+              <Link
+                to="leilao"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <LeilaoButton>Leilão</LeilaoButton>
+              </Link>
+            </Options>
 
-        <Options3
-          onMouseEnter={() => setUserModal(true)}
-          onMouseLeave={() => setUserModal(false)}
-        >
-          <SamuelLeaoFoto>SL</SamuelLeaoFoto>
-          <SamuelLeaoNome>Samuel Leão</SamuelLeaoNome>
-          {userModal && <UserModal />}
-        </Options3>
+            <Options3
+              onMouseEnter={() => setUserModal(true)}
+              onMouseLeave={() => setUserModal(false)}
+            >
+              <SamuelLeaoFoto>SL</SamuelLeaoFoto>
+              <SamuelLeaoNome>Samuel Leão</SamuelLeaoNome>
+              {userModal && <UserModal />}
+            </Options3>
 
-        {/* esse daqui debaixo é pro usuário deslogado */}
-        {/* <Options2>
+            {/* esse daqui debaixo é pro usuário deslogado */}
+            {/* <Options2>
           <FazerLoginButton>Fazer Login</FazerLoginButton>
           <CadastrarButton>Cadastrar</CadastrarButton>
         </Options2> */}
-      </StyledRightButtonsWrapper>
-    </StyledHeader>
+          </StyledRightButtonsWrapper>
+        ) : (
+          <NavButton onClick={() => setWasClicked(true)}>
+            <TracoDoBotaoNav></TracoDoBotaoNav>
+            <TracoDoBotaoNav></TracoDoBotaoNav>
+            <TracoDoBotaoNav></TracoDoBotaoNav>
+          </NavButton>
+        )}
+      </StyledHeader>
+    </>
   );
 }
