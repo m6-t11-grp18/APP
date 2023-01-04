@@ -14,6 +14,7 @@ export const MainWrapper = styled.div`
     max-width: 100%;
     box-sizing: border-box;
     width: 93vw !important;
+    border-radius: 7px;
   }
 `;
 
@@ -55,7 +56,6 @@ export const BasicDetails = styled.section`
   width: 93vw;
   height: fit-content;
   background: ${({ theme }) => theme.grey[10]};
-  border-radius: 7px;
   gap: 30px;
 `;
 
@@ -157,7 +157,6 @@ export const PhotosSection = styled.section`
   max-width: 390px;
   height: auto;
   background-color: ${({ theme }) => theme.grey[10]};
-  border-radius: 7px;
   gap: 30px;
 
   ul {
