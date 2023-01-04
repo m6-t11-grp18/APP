@@ -22,7 +22,7 @@ export default function Seller() {
         backgroundImage: `linear-gradient(${themes.light.brand[1]} 0, ${themes.light.brand[1]} 25vh,${themes.light.grey[8]} 25vh)`,
       }}
     >
-      <Headerr/>
+      <Headerr />
       <SellerWrapper>
         <SellerAvatar>SL</SellerAvatar>
         <SellerInfosWrapper>
@@ -98,7 +98,6 @@ export default function Seller() {
         </Text>
         <Announcements></Announcements>
       </AnnouncementSection>
-
       <Footer />
     </MainWrapper>
   );

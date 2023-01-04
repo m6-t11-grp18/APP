@@ -10,11 +10,16 @@ export const MainWrapper = styled.div`
   gap: 20px;
 
   box-sizing: border-box;
+  section {
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 93vw !important;
+  }
 `;
 
 export const Header = styled.section`
-  width: calc(100vw + 2px);
-  height: 50vh;
+  width: 93vw;
+  height: ${({ desktop }) => (desktop ? '340px' : '50vh')};
   /* margin-top: 70px; */
   /* background-color: ${({ theme }) => theme.brand[2]}; */
   display: flex;
@@ -23,15 +28,15 @@ export const Header = styled.section`
   justify-content: center;
   align-content: center;
   padding: 0;
+  margin: ${({ desktop }) => (desktop ? '0' : '4vw')};
   box-sizing: border-box;
 `;
 
 export const Photo = styled.div`
   /* position: absolute;
   top: 5vw; */
-  width: 95vw;
-  height: 95vw;
-  max-height: 40vh;
+  width: 100%;
+  height: 100%;
   background: ${({ theme }) => theme.grey[10]};
   border-radius: 7px;
 
@@ -42,24 +47,15 @@ export const Photo = styled.div`
   }
 `;
 
-export const BasicDetailsHeadline = styled.div`
-  /* position: absolute;
-  height: 20px; */
-  width: 95vw;
-  top: calc(100% - 19px);
-  border-radius: 7px 7px 0 0;
-  background: ${({ theme }) => theme.grey[10]};
-`;
-
 export const BasicDetails = styled.section`
-  margin-top: -20px;
+  margin-top: ${({ desktop }) => (desktop ? '0' : '-20px')};
   display: flex;
   flex-direction: column;
-  padding: 8px 28px 28px 28px;
-  width: calc(95vw - 54px);
+  padding: 28px;
+  width: 93vw;
   height: fit-content;
   background: ${({ theme }) => theme.grey[10]};
-  border-radius: 0 0 7px 7px;
+  border-radius: 7px;
   gap: 30px;
 `;
 
@@ -134,8 +130,8 @@ export const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.grey[1]};
 `;
 
-export const Description = styled.div`
-  padding: 5vw;
+export const Description = styled.section`
+  padding: 40px;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -156,8 +152,9 @@ export const SectionP = styled.p`
 export const PhotosSection = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 7vw;
+  padding: 30px;
   width: calc(95vw - 14vw);
+  max-width: 390px;
   height: auto;
   background-color: ${({ theme }) => theme.grey[10]};
   border-radius: 7px;
@@ -175,9 +172,8 @@ export const PhotosSection = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50vw;
+    width: 110px;
     aspect-ratio: 1/1;
-    max-width: 170px;
     background-color: ${({ theme }) => theme.grey[7]};
     border-radius: 7px;
   }
@@ -357,4 +353,31 @@ export const QuickComments = styled.div`
       border: none;
     }
   }
+`;
+
+export const Row = styled.div`
+  box-sizing: border-box;
+  padding-top: 25px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+`;
+
+export const Left = styled.div`
+  width: 55vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
+export const Right = styled.div`
+  width: 40vw;
+  max-width: 436px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;
