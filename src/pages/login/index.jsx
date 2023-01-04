@@ -7,9 +7,20 @@ import { MainWrapper, Anchor, Form } from "./style";
 import { themes } from '../../style/theme';
 import BrandButton from '../../components/buttons/brand';
 import BrandOutlineButton from '../../components/buttons/brandOutline';
-
+import { Link } from 'react-scroll';
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+
+    let navigate = useNavigate();
+
+    const handleButtonEnter = () => {
+        navigate(`/`);
+    };
+
+    const handleButtonRegister = () => {
+        navigate(`/register`);
+    };
 
     const TextStyle = {
         color: `${themes.light.white[1]}`,
@@ -21,6 +32,7 @@ export default function Login() {
     const linkStyle = {
         display: 'flex',
         justifyContent: 'flex-end',
+        cursor: 'pointer',
     }
 
     const buttonStyle = {
@@ -42,13 +54,20 @@ export default function Login() {
                     <Label>Senha</Label>
                     <Input placeholder='Digite sua senha aqui' />
 
-                    <a style={linkStyle} link=''>Esqueci minha senha</a>
+                    <Link style={linkStyle}> Esqueci minha senha</Link>
 
-                    <BrandButton style={buttonStyle}> Entrar </BrandButton>
+                    <BrandButton
+                        style={buttonStyle}
+                        onClick={handleButtonEnter}
+                    > Entrar </BrandButton>
 
                     <Anchor>Ainda não tem sua conta? </Anchor>
 
-                    <BrandOutlineButton style={buttonStyle}>Cadastrar</BrandOutlineButton>
+                    <BrandOutlineButton
+                        style={buttonStyle}
+                        onClick={handleButtonRegister}
+                    > Cadastrar
+                    </BrandOutlineButton>
                 </Form>
             </MainWrapper>
             <Footer />

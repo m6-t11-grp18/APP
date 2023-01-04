@@ -32,7 +32,6 @@ export const Anchor = styled.h1`
     color: ${({ theme }) => theme.grey[2]};
     width: 100%;
     font-weight: ${({ theme }) => theme.fontWeight[4]};
-    cursor: pointer;
 `;
 
 export const Form = styled.form`
