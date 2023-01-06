@@ -7,8 +7,11 @@ import {
   CadastrarButton,
   CarrosButton,
   FazerLoginButton,
+  Hamburguer,
   LeilaoButton,
   LogoContainer,
+  Menu,
+  MobileMenu,
   Motors,
   MotosButton,
   NavButton,
@@ -27,6 +30,7 @@ export default function Headerr({ ...rest }) {
   const navigate = useNavigate();
 
   const [wasClicked, setWasClicked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const { userModal, setUserModal } =
     useContext(StyleContext);
@@ -107,11 +111,57 @@ export default function Headerr({ ...rest }) {
         </Options2> */}
           </StyledRightButtonsWrapper>
         ) : (
-          <NavButton onClick={() => setWasClicked(true)}>
-            <TracoDoBotaoNav></TracoDoBotaoNav>
-            <TracoDoBotaoNav></TracoDoBotaoNav>
-            <TracoDoBotaoNav></TracoDoBotaoNav>
-          </NavButton>
+          <nav>
+            <Hamburguer>
+              <input
+                type="checkbox"
+                onChange={(event) => {
+                  setIsOpen(event.target.checked);
+                }}
+              />
+              <span></span>
+              <span></span>
+              <span></span>
+            </Hamburguer>
+            <Menu isOpen={isOpen}>
+              <Link
+                to="carros"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <li>Carros</li>
+              </Link>
+              <Link
+                to="motos"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <li>Motos</li>
+              </Link>
+              <Link
+                to="leilao"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <li>Info</li>
+              </Link>
+              <Link
+                to="login"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}
+              >
+                <li>Meu perfil</li>
+              </Link>
+            </Menu>
+          </nav>
         )}
       </StyledHeader>
     </>
