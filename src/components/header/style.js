@@ -20,12 +20,23 @@ export const StyledRightButtonsWrapper = styled.div`
   align-items: center;
 
   @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const NavMobileWrapper = styled.nav`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
   }
 `;
 
 export const Options = styled.div`
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
   width: 250px;
   margin-right: 20px;
 `;
@@ -47,8 +58,9 @@ export const Options3 = styled.div`
   height: 100%;
   align-items: center;
   border-left: 2px solid rgb(240, 240, 240);
-  padding-left: 30px;
-  margin-right: 15px;
+  padding-left: 15px;
+  margin-right: 30px;
+  gap: 10px;
 `;
 
 export const LogoContainer = styled.div`
@@ -125,7 +137,7 @@ export const SamuelLeaoFoto = styled.div`
 
 export const SamuelLeaoNome = styled.div`
   color: #495057;
-
+  width: 120px;
   cursor: pointer;
 `;
 
@@ -148,11 +160,7 @@ export const MobileMenu = styled.div`
 `;
 
 export const Hamburguer = styled.div`
-  /*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- */
+  display: none;
   position: relative;
   right: 25px;
 
@@ -216,6 +224,10 @@ export const Hamburguer = styled.div`
   input:checked ~ span {
     transform: rotate(-45deg) translate(-5px, 0);
   }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 export const Menu = styled.li`
@@ -238,6 +250,6 @@ export const Menu = styled.li`
   li {
     padding: 15px;
     ${({ selected, theme }) =>
-      selected ? theme.brand[2] : '#ffffff'}
+    selected ? theme.brand[2] : '#ffffff'}
   }
 `;
