@@ -35,7 +35,7 @@ export default function Headerr({ ...rest }) {
   const { userModal, setUserModal } =
     useContext(StyleContext);
 
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const updateWindowDimensions = () => {
