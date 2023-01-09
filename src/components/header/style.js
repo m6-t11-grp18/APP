@@ -10,7 +10,7 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.white[0]};
-  box-shadow: 0 0 10px 5px #00000060;
+  box-shadow: 0 0 10px 0px #00000060;
 `;
 
 export const StyledRightButtonsWrapper = styled.div`
