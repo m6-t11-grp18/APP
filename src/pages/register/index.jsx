@@ -52,6 +52,7 @@ export default function Register() {
       tipoDeConta: tipoDeConta,
       password: senha,
     };
+    
    
     console.log("dados do formulario -->", data)
 
