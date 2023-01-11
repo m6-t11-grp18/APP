@@ -29,7 +29,8 @@ export default function Login() {
     MotoShopApi.post('/auth/', data)
       .then((resp) => {
         console.log('deu certo o post na api?:', resp);
-        localStorage.setItem('@WHO-TOKEN', resp.data.token);
+        localStorage.clear()
+        localStorage.setItem('@WHO-TOKEN', 'ta logado');
         navigate(`/`);
       })
       .catch((error) => {
@@ -71,22 +72,20 @@ export default function Login() {
 
           <Label>Usuário</Label>
           <Input
-            onClick={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Digite seu usuário aqui"
           />
 
           <Label>Senha</Label>
           <Input
-            onClick={(e) => setSenha(e.target.value)}
+            type="password"
+            onChange={(e) => setSenha(e.target.value)}
             placeholder="Digite sua senha aqui"
           />
 
           <Link style={linkStyle}>Esqueci minha senha</Link>
 
-          <BrandButton
-            style={buttonStyle}
-            onClick={login}
-          >
+          <BrandButton style={buttonStyle} onClick={login}>
             Entrar
           </BrandButton>
 
