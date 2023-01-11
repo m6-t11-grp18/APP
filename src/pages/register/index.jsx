@@ -1,125 +1,234 @@
-import Footer from "../../components/footer";
-import Headerr from "../../components/header";
-import { MainWrapper, Form, Div, LabelCompartilhada } from "./style";
+import Footer from '../../components/footer';
+import Headerr from '../../components/header';
+import {
+  MainWrapper,
+  Form,
+  Div,
+  LabelCompartilhada,
+} from './style';
 import Text from '../../components/text/paragraph';
-import Label from "../../components/form/label";
-import Input from "../../components/form/input";
+import Label from '../../components/form/label';
+import Input from '../../components/form/input';
 import { themes } from '../../style/theme';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import BrandButton from '../../components/buttons/brand';
+import { useState } from 'react';
+import MotoShopApi from '../../services';
 
 export default function Register() {
+  let navigate = useNavigate();
 
-    let navigate = useNavigate();
-    const handleButtonRegister = () => {
-        navigate(`/login`);
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [celular, setCelular] = useState('');
+  const [dataDeNascimento, setDataDeNascimento] =
+    useState('');
+  const [descricao, setDescricao] = useState('');
+  const [cep, setCep] = useState('');
+  const [estado, setEstado] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [rua, setRua] = useState('');
+  const [numero, setNumero] = useState('');
+  const [complemento, setComplemento] = useState('');
+  const [tipoDeConta, setTipoDeConta] =
+    useState('Comprador');
+  const [senha, setSenha] = useState('');
+
+  const createUser = () => {
+    const data = {
+      name: nome,
+      email: email,
+      cpf: cpf,
+      phone: celular,
+      birth: dataDeNascimento,
+      descripition: descricao,
+      cep: cep,
+      estado: estado,
+      cidade: cidade,
+      rua: rua,
+      numero: numero,
+      complemento: complemento,
+      tipoDeConta: tipoDeConta,
+      password: senha,
     };
+   
+    console.log("dados do formulario -->", data)
 
-    const TextStyle = {
-        color: `${themes.light.white[1]}`,
-        fontWeight: `${themes.light.fontWeight[6]}`,
-        fontSize: `${themes.light.fontSize[125]}`,
-        fontFamily: `${themes.light.fontFamily['Lexend']}`,
-    }
+    MotoShopApi.post('/user/', data)
+      .then((resp) => {
+        console.log("deu certo o post na api?:", resp)
+        localStorage.setItem('@WHO-TOKEN', resp.data.token);
+        navigate(`/login`);
+      })
+      .catch((error) => {
+       console.log("deu certo o post na API nao -->", error.response.data);
+      });
 
-    const TextStyle2 = {
-        color: `${themes.light.white[1]}`,
-        fontWeight: `${themes.light.fontWeight[6]}`,
-        fontSize: `${themes.light.fontSize[100]}`,
-        fontFamily: `${themes.light.fontFamily['Lexend']}`,
-    }
+  };
 
-    const buttonStyle = {
-        width: '100%',
-        height: '40px',
-    }
+  const TextStyle = {
+    color: `${themes.light.white[1]}`,
+    fontWeight: `${themes.light.fontWeight[6]}`,
+    fontSize: `${themes.light.fontSize[125]}`,
+    fontFamily: `${themes.light.fontFamily['Lexend']}`,
+  };
 
-    const buttonStyle2 = {
-        width: '45%',
-        height: '40px',
-    }
-    return (
-        <>
-            <Headerr />
-            <MainWrapper>
-                <Form>
-                    <Text style={TextStyle}>Cadastro </Text>
-                    <Text style={TextStyle2}>Informações pessoais </Text>
+  const TextStyle2 = {
+    color: `${themes.light.white[1]}`,
+    fontWeight: `${themes.light.fontWeight[6]}`,
+    fontSize: `${themes.light.fontSize[100]}`,
+    fontFamily: `${themes.light.fontFamily['Lexend']}`,
+  };
 
-                    <Label>Nome</Label>
-                    <Input placeholder='Ex: Samuel Leão' />
+  const buttonStyle = {
+    width: '100%',
+    height: '40px',
+  };
 
-                    <Label>Email</Label>
-                    <Input placeholder='Ex: samuel@kenzie.com' />
+  const buttonStyle2 = {
+    width: '45%',
+    height: '40px',
+  };
+  return (
+    <>
+      <Headerr />
+      <MainWrapper>
+        <Form>
+          <Text style={TextStyle}>Cadastro </Text>
+          <Text style={TextStyle2}>
+            Informações pessoais
+          </Text>
 
-                    <Label>CPF</Label>
-                    <Input placeholder='000.000.000-00' />
+          <Label>Nome</Label>
+          <Input
+            onChange={(e) => setNome(e.target.value)}
+            placeholder="Ex: Samuel Leão"
+          />
 
-                    <Label>Celular</Label>
-                    <Input placeholder='(DDD) 90000-0000' />
+          <Label>Email</Label>
+          <Input
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Ex: samuel@kenzie.com"
+          />
 
-                    <Label>Data de Nascimento</Label>
-                    <Input placeholder='00/00/00' />
+          <Label>CPF</Label>
+          <Input
+            onChange={(e) => setCpf(e.target.value)}
+            placeholder="000.000.000-00"
+          />
 
-                    <Label>Descrição</Label>
-                    <Input placeholder='Digitar descrição' />
+          <Label>Celular</Label>
+          <Input
+            onChange={(e) => setCelular(e.target.value)}
+            placeholder="(DDD) 90000-0000"
+          />
 
-                    <Text style={TextStyle2}>Informações de Emdereço</Text>
+          <Label>Data de Nascimento</Label>
+          <Input
+            onChange={(e) =>
+              setDataDeNascimento(e.target.value)
+            }
+            placeholder="00/00/00"
+          />
 
-                    <Label>CEP</Label>
-                    <Input placeholder='00000.000' />
+          <Label>Descrição</Label>
+          <Input
+            onChange={(e) => setDescricao(e.target.value)}
+            placeholder="Digitar descrição"
+          />
 
-                    <Div>
-                        <LabelCompartilhada>
-                            <Label>Estado</Label>
-                            <Input placeholder='Digitar estado' />
-                        </LabelCompartilhada>
-                        <LabelCompartilhada>
-                            <Label>Cidade</Label>
-                            <Input placeholder='Digitar cidade' />
-                        </LabelCompartilhada>
-                    </Div>
+          <Text style={TextStyle2}>
+            Informações de Endereço
+          </Text>
 
-                    <Label>Rua</Label>
-                    <Input placeholder='Digitar rua' />
+          <Label>CEP</Label>
+          <Input
+            onChange={(e) => setCep(e.target.value)}
+            placeholder="00000.000"
+          />
 
-                    <Div>
-                        <LabelCompartilhada>
-                            <Label>Número</Label>
-                            <Input placeholder='Digitar número' />
-                        </LabelCompartilhada>
-                        <LabelCompartilhada>
-                            <Label>Complemento</Label>
-                            <Input placeholder='Ex: apto 307, torre 2' />
-                        </LabelCompartilhada>
-                    </Div>
+          <Div>
+            <LabelCompartilhada>
+              <Label>Estado</Label>
+              <Input
+                onChange={(e) => setEstado(e.target.value)}
+                placeholder="Digitar estado"
+              />
+            </LabelCompartilhada>
+            <LabelCompartilhada>
+              <Label>Cidade</Label>
+              <Input
+                onChange={(e) => setCidade(e.target.value)}
+                placeholder="Digitar cidade"
+              />
+            </LabelCompartilhada>
+          </Div>
 
-                    <Text style={TextStyle2}>Tipo de conta</Text>
+          <Label>Rua</Label>
+          <Input
+            onChange={(e) => setRua(e.target.value)}
+            placeholder="Digitar rua"
+          />
 
-                    <Div>
-                        <BrandButton
-                            style={buttonStyle2}
-                        >   Comprador </BrandButton>
+          <Div>
+            <LabelCompartilhada>
+              <Label>Número</Label>
+              <Input
+                onChange={(e) => setNumero(e.target.value)}
+                placeholder="Digitar número"
+              />
+            </LabelCompartilhada>
+            <LabelCompartilhada>
+              <Label>Complemento</Label>
+              <Input
+                onChange={(e) =>
+                  setComplemento(e.target.value)
+                }
+                placeholder="Ex: apto 307, torre 2"
+              />
+            </LabelCompartilhada>
+          </Div>
 
-                        <BrandButton
-                            style={buttonStyle2}
-                        > Anunciante </BrandButton>
-                    </Div>
+          <Text style={TextStyle2}>Tipo de conta</Text>
 
-                    <Label>Senha</Label>
-                    <Input placeholder='Digitar senha' />
+          <Div>
+            <BrandButton
+              onClick={() => setTipoDeConta('Comprador')}
+              style={buttonStyle2}
+            >
+              Comprador
+            </BrandButton>
 
-                    <Label>Confirmar Senha</Label>
-                    <Input placeholder='Digitar senha novamente' />
+            <BrandButton
+              onClick={() => setTipoDeConta('Anunciante')}
+              style={buttonStyle2}
+            >
+              Anunciante
+            </BrandButton>
+          </Div>
 
-                    <BrandButton
-                        style={buttonStyle}
-                        onClick={handleButtonRegister}
-                    > Finalizar Cadastro </BrandButton>
+          <Label>Senha</Label>
+          <Input
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="Digitar senha"
+          />
 
-                </Form>
-            </MainWrapper>
-            <Footer />
-        </>
-    )
+          <Label>Confirmar Senha</Label>
+          <Input
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="Digitar senha novamente"
+          />
+
+          <BrandButton
+            style={buttonStyle}
+            onClick={createUser}
+          >
+            Finalizar Cadastro
+          </BrandButton>
+        </Form>
+      </MainWrapper>
+      <Footer />
+    </>
+  );
 }
