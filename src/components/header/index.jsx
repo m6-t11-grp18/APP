@@ -29,14 +29,22 @@ export default function Headerr({ ...rest }) {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { userModal, setUserModal } = useContext(StyleContext);
+  const { userModal, setUserModal } =
+    useContext(StyleContext);
 
-  const [logged, setIsLogged] = useState(true);
+  const [logged, setIsLogged] = useState(false);
+
+  const isLogged = localStorage.getItem('@WHO-TOKEN');
+
+  useEffect(() => {
+    if (isLogged) {
+      setIsLogged(true);
+    }
+  }, [logged]);
 
   return (
     <>
       <StyledHeader>
-
         <LogoContainer onClick={() => navigate('/')}>
           <Motors>Motors</Motors>
           <Shop>shop</Shop>
@@ -84,10 +92,14 @@ export default function Headerr({ ...rest }) {
             <Options2>
               <FazerLoginButton
                 onClick={() => navigate('/login')}
-              >Fazer Login</FazerLoginButton>
+              >
+                Fazer Login
+              </FazerLoginButton>
               <CadastrarButton
                 onClick={() => navigate('/register')}
-              >Cadastrar</CadastrarButton>
+              >
+                Cadastrar
+              </CadastrarButton>
             </Options2>
           )}
         </StyledRightButtonsWrapper>

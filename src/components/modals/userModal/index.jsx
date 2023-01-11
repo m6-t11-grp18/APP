@@ -25,7 +25,10 @@ export default function UserModal() {
       >
         Meus Anúncios
       </Anchor>
-      <Anchor style={AnchorStyle}>Sair</Anchor>
+      <Anchor onClick={()=>{
+        localStorage.clear()
+        navigate('/login')
+      }} style={AnchorStyle}>Sair</Anchor>
     </NavWrapper>
   );
 }

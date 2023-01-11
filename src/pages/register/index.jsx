@@ -5,6 +5,8 @@ import {
   Form,
   Div,
   LabelCompartilhada,
+  Botaoo1,
+  Botaoo2,
 } from './style';
 import Text from '../../components/text/paragraph';
 import Label from '../../components/form/label';
@@ -12,7 +14,7 @@ import Input from '../../components/form/input';
 import { themes } from '../../style/theme';
 import { useNavigate } from 'react-router-dom';
 import BrandButton from '../../components/buttons/brand';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import MotoShopApi from '../../services';
 
 export default function Register() {
@@ -35,6 +37,18 @@ export default function Register() {
     useState('Comprador');
   const [senha, setSenha] = useState('');
 
+  const [selectedButton, setSelectedButton] =
+    useState(null);
+
+  const handleButtonClick = (e) => {
+    const { name } = e.target;
+    if (name === selectedButton) {
+      setSelectedButton(null);
+    } else {
+      setSelectedButton(name);
+    }
+  };
+
   const createUser = () => {
     const data = {
       name: nome,
@@ -52,19 +66,21 @@ export default function Register() {
       tipoDeConta: tipoDeConta,
       password: senha,
     };
-   
-    console.log("dados do formulario -->", data)
+
+    console.log('dados do formulario -->', data);
 
     MotoShopApi.post('/user/', data)
-      .then((resp) => {
-        console.log("deu certo o post na api?:", resp)
-        localStorage.setItem('@WHO-TOKEN', resp.data.token);
+      .then((res) => {
+        console.log('deu certo o post na api -->', res);
+
         navigate(`/login`);
       })
       .catch((error) => {
-       console.log("deu certo o post na API nao -->", error.response.data);
+        console.log(
+          'deu certo o post na API nao -->',
+          error.response.data
+        );
       });
-
   };
 
   const TextStyle = {
@@ -90,6 +106,7 @@ export default function Register() {
     width: '45%',
     height: '40px',
   };
+
   return (
     <>
       <Headerr />
@@ -193,29 +210,49 @@ export default function Register() {
           <Text style={TextStyle2}>Tipo de conta</Text>
 
           <Div>
-            <BrandButton
-              onClick={() => setTipoDeConta('Comprador')}
-              style={buttonStyle2}
+            <Botaoo1
+              type="button"
+              name="button1"
+              onClick={() => {
+                handleButtonClick();
+                setTipoDeConta('Comprador');
+              }}
+              style={
+                selectedButton === 'button1'
+                  ? { backgroundColor: 'green' }
+                  : buttonStyle2
+              }
             >
               Comprador
-            </BrandButton>
+            </Botaoo1>
 
-            <BrandButton
-              onClick={() => setTipoDeConta('Anunciante')}
-              style={buttonStyle2}
+            <Botaoo2
+              type="button"
+              name="button2"
+              onClick={() => {
+                handleButtonClick();
+                setTipoDeConta('Anunciante');
+              }}
+              style={
+                selectedButton === 'button2'
+                  ? { backgroundColor: 'green' }
+                  : buttonStyle2
+              }
             >
               Anunciante
-            </BrandButton>
+            </Botaoo2>
           </Div>
 
           <Label>Senha</Label>
           <Input
+            type="password"
             onChange={(e) => setSenha(e.target.value)}
             placeholder="Digitar senha"
           />
 
           <Label>Confirmar Senha</Label>
           <Input
+            type="password"
             onChange={(e) => setSenha(e.target.value)}
             placeholder="Digitar senha novamente"
           />
