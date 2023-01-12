@@ -57,13 +57,13 @@ export default function CreateAddModal() {
       variable={createAddModal}
       set={setCreateAddModal}
       modalStyle={
-        `width: 40%;` +
+        `width: 300px;` +
         `display: flex;` +
         `flex-direction: column;` +
         `font-family: 'Inter';` +
         `background-color: ${themes.light.white[0]}; ` +
         `padding: 1% 2%;` +
-        `margin: 4vh 0`
+        `margin: 4vh 0;`
       }
     >
       <TitleWrapper>
@@ -176,7 +176,7 @@ export default function CreateAddModal() {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              width: '25%',
+              width: '30%',
             }}
           >
             <Label>Ano</Label>
@@ -192,10 +192,10 @@ export default function CreateAddModal() {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                width: '25%',
+                width: '30%',
               }}
             >
-              <Label>Quilometragem</Label>
+              <Label>KM</Label>
               <Input
                 placeholder="0"
                 style={{
@@ -208,7 +208,7 @@ export default function CreateAddModal() {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              width: '25%',
+              width: '30%',
             }}
           >
             <Label>Preço</Label>
@@ -292,7 +292,7 @@ export default function CreateAddModal() {
               borderColor: typeVeicColor.moto.borderColor,
             }}
           >
-            moto
+            Moto
           </BrandOutlineButton>
         </InputsWrapper>
 
