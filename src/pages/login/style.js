@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
   display: flex;
-  /* height: 61vh; */
   align-items: center;
   justify-content: center;
-  min-height:100vh;
-  padding: 10vh 0 0 0;
-  background-color: rgba(238, 238, 238, 0.8);
+  min-height:82vh;
+  padding: 5rem 0 0 0;
+  background-color: ${({ theme }) => theme.white[0]};
 
   @media (max-width: 2560px) {
     height: 71vh;
@@ -41,7 +40,7 @@ export const Form = styled.form`
   flex-wrap: nowrap;
   width: 350px;
   gap: 1rem;
-  background-color: white;
+  background-color: ${({ theme }) => theme.grey[5]};
   padding: 2rem 2rem;
 
   border-radius: 4px;

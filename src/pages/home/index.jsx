@@ -82,6 +82,9 @@ export default function HomePage() {
           </Text>
 
           <BrandOutlineButton
+            style={{
+              width: '100%'
+            }}
             onClick={() => setCreateAddModal(true)}
           >
             Criar anuncio
