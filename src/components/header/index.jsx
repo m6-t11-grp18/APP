@@ -83,8 +83,8 @@ export default function Headerr({ ...rest }) {
                 onMouseEnter={() => setUserModal(true)}
                 onMouseLeave={() => setUserModal(false)}
               >
-                <SamuelLeaoFoto>SL</SamuelLeaoFoto>
-                <SamuelLeaoNome>Samuel Leão</SamuelLeaoNome>
+                <SamuelLeaoFoto>VC</SamuelLeaoFoto>
+                <SamuelLeaoNome>Valdemir Costa</SamuelLeaoNome>
                 {userModal && <UserModal />}
               </Options3>
             </Options>
